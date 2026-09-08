@@ -52,17 +52,19 @@ h1,h2,h3 { font-family: 'DM Serif Display', Georgia, serif; }
 .metrics-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 28px; }
 /* Pathway cards (colored gradient headers) */
 .path-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 24px 0 10px; }
-.path-card { border: 1px solid #e3e8ef; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; background: #fff; box-shadow: 0 2px 10px rgba(27,58,92,0.06); }
+.path-card { border: 1px solid #e3e8ef; border-radius: 12px; overflow: hidden; display: grid; grid-template-rows: subgrid; grid-row: span 6; background: #fff; box-shadow: 0 2px 10px rgba(27,58,92,0.06); }
+@supports not (grid-template-rows: subgrid) { .path-card { display: flex; flex-direction: column; } }
 .path-card .ph { padding: 18px 18px 16px; color: #fff; min-height: 200px; display: flex; flex-direction: column; }
+.path-card .ptag { min-height: 1.3em; }
 .path-card.pa .ph { background: linear-gradient(135deg, #6E2A16 0%, #A0492B 100%); }
 .path-card.pb .ph { background: linear-gradient(135deg, #17472D 0%, #2E8A55 100%); }
 .path-card.pc .ph { background: linear-gradient(135deg, #7A5A1E 0%, #C5A258 100%); }
 .path-card.pd .ph { background: linear-gradient(135deg, #0F2745 0%, #2B5A8C 100%); }
 .path-card .ptag { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; opacity: .85; margin-bottom: 6px; font-weight: 600; }
-.path-card .pname { font-size: 19px; font-weight: 400; line-height: 1.2; font-family: 'DM Serif Display', serif; }
-.path-card .punits { font-size: 12px; opacity: .9; margin-top: 5px; }
+.path-card .pname { font-size: 19px; font-weight: 400; line-height: 1.2; font-family: 'DM Serif Display', serif; min-height: 2.4em; }
+.path-card .punits { font-size: 12px; opacity: .9; margin-top: 5px; min-height: 2.9em; line-height: 1.45; }
 .path-card .pbig { font-size: 30px; font-weight: 600; font-family: 'DM Serif Display', serif; line-height: 1.1; margin-top: auto; padding-top: 12px; }
-.path-card .pbig-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; opacity: .8; margin-top: 3px; }
+.path-card .pbig-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; opacity: .8; margin-top: 3px; min-height: 2.8em; line-height: 1.4; }
 .path-card .pb-body { padding: 14px 18px; font-size: 12.5px; flex: 1; }
 .path-card .pb-body ul { list-style: none; margin: 0; }
 .path-card .pb-body li { margin-bottom: 6px; line-height: 1.5; padding-left: 12px; position: relative; }
@@ -79,9 +81,9 @@ h1,h2,h3 { font-family: 'DM Serif Display', Georgia, serif; }
 .scen-banner { display: flex; align-items: center; justify-content: space-between; gap: 16px; color: #fff; border-radius: 10px; padding: 22px 26px; margin-bottom: 26px; }
 .scen-banner .sb-tag { font-size: 10px; letter-spacing: 1.8px; text-transform: uppercase; font-weight: 600; opacity: .85; }
 .scen-banner .sb-sub { font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; opacity: .85; margin-top: 6px; }
-.scen-banner .sb-name { font-size: 28px; font-family: 'DM Serif Display', serif; line-height: 1.15; margin-top: 3px; }
+.scen-banner .sb-name { font-size: 28px; font-weight: 400; font-family: 'DM Serif Display', serif; line-height: 1.15; margin-top: 3px; }
 .scen-banner .sb-stat { text-align: right; white-space: nowrap; }
-.scen-banner .sb-stat-value { font-size: 26px; font-family: 'DM Serif Display', serif; font-weight: 600; line-height: 1.1; }
+.scen-banner .sb-stat-value { font-size: 22px; font-family: 'DM Serif Display', serif; font-weight: 600; line-height: 1.1; }
 .scen-banner .sb-stat-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; opacity: .8; }
 .scen-banner.ba { background: linear-gradient(135deg, #6E2A16 0%, #A0492B 100%); }
 .scen-banner.bb { background: linear-gradient(135deg, #17472D 0%, #2E8A55 100%); }
