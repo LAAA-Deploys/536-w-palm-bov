@@ -44,6 +44,44 @@ h1,h2,h3 { font-family: 'DM Serif Display', Georgia, serif; }
 .section-divider { width: 60px; height: 3px; background: #C5A258; margin-bottom: 26px; }
 .sub-heading { font-size: 18px; font-weight: 400; color: #1B3A5C; margin: 28px 0 14px; font-family: 'DM Serif Display', serif; }
 .metrics-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 28px; }
+/* Pathway cards (colored gradient headers) */
+.path-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 24px 0 10px; }
+.path-card { border: 1px solid #e3e8ef; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; background: #fff; box-shadow: 0 2px 10px rgba(27,58,92,0.06); }
+.path-card .ph { padding: 18px 18px 16px; color: #fff; }
+.path-card.pa .ph { background: linear-gradient(135deg, #6E2A16 0%, #A0492B 100%); }
+.path-card.pb .ph { background: linear-gradient(135deg, #17472D 0%, #2E8A55 100%); }
+.path-card.pc .ph { background: linear-gradient(135deg, #7A5A1E 0%, #C5A258 100%); }
+.path-card.pd .ph { background: linear-gradient(135deg, #0F2745 0%, #2B5A8C 100%); }
+.path-card .ptag { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; opacity: .85; margin-bottom: 6px; font-weight: 600; }
+.path-card .pname { font-size: 19px; font-weight: 400; line-height: 1.2; font-family: 'DM Serif Display', serif; }
+.path-card .punits { font-size: 12px; opacity: .9; margin-top: 5px; }
+.path-card .pbig { font-size: 30px; font-weight: 600; font-family: 'DM Serif Display', serif; line-height: 1.1; margin-top: 12px; }
+.path-card .pbig-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; opacity: .8; margin-top: 3px; }
+.path-card .pb-body { padding: 14px 18px; font-size: 12.5px; flex: 1; }
+.path-card .pb-body ul { list-style: none; margin: 0; }
+.path-card .pb-body li { margin-bottom: 6px; line-height: 1.5; padding-left: 12px; position: relative; }
+.path-card .pb-body li:before { content: '\2022'; color: #C5A258; position: absolute; left: 0; }
+.path-card .pmetric { display: flex; justify-content: space-between; gap: 8px; padding: 8px 18px; border-top: 1px solid #edf0f4; font-size: 12px; }
+.path-card .pmetric .l { color: #777; }
+.path-card .pmetric .v { font-weight: 700; color: #1B3A5C; text-align: right; }
+.path-card .pverdict { padding: 9px 18px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; text-align: center; color: #fff; }
+.path-card.pa .pverdict { background: #8C3A22; }
+.path-card.pb .pverdict { background: #1F5B3A; }
+.path-card.pc .pverdict { background: #B08D3F; }
+.path-card.pd .pverdict { background: #1B3A5C; }
+/* Scenario section color banners */
+.scen-banner { display: flex; align-items: center; justify-content: space-between; gap: 16px; color: #fff; border-radius: 10px; padding: 14px 22px; margin-bottom: 22px; }
+.scen-banner .sb-tag { font-size: 10px; letter-spacing: 1.8px; text-transform: uppercase; font-weight: 600; opacity: .85; }
+.scen-banner .sb-name { font-size: 22px; font-family: 'DM Serif Display', serif; line-height: 1.15; margin-top: 3px; }
+.scen-banner .sb-stat { text-align: right; white-space: nowrap; }
+.scen-banner .sb-stat-value { font-size: 26px; font-family: 'DM Serif Display', serif; font-weight: 600; line-height: 1.1; }
+.scen-banner .sb-stat-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; opacity: .8; }
+.scen-banner.ba { background: linear-gradient(135deg, #6E2A16 0%, #A0492B 100%); }
+.scen-banner.bb { background: linear-gradient(135deg, #17472D 0%, #2E8A55 100%); }
+.scen-banner.bc { background: linear-gradient(135deg, #7A5A1E 0%, #C5A258 100%); }
+.scen-banner.bd { background: linear-gradient(135deg, #0F2745 0%, #2B5A8C 100%); }
+.scen-card.scen-a { border-top: 5px solid #8C3A22; } .scen-card.scen-b { border-top: 5px solid #1F5B3A; } .scen-card.scen-c { border-top: 5px solid #B08D3F; } .scen-card.scen-d { border-top: 5px solid #1B3A5C; }
+
 .metrics-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 28px; }
 .metric-card { background: #1B3A5C; border-radius: 12px; padding: 22px 16px; text-align: center; color: #fff; }
 .metric-card.warn { background: #8C3A22; }
@@ -106,6 +144,8 @@ td.num, th.num { text-align: right; }
   .section { padding: 30px 16px; }
   .two-col, .wbt-grid, .scen-grid { grid-template-columns: 1fr; }
   .metrics-grid-4, .metrics-grid-3 { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .path-grid { grid-template-columns: repeat(2, 1fr); }
+  .scen-banner { flex-direction: column; align-items: flex-start; } .scen-banner .sb-stat { text-align: left; }
   .metric-card { padding: 16px 10px; } .metric-value { font-size: 20px; }
   .hero-number-value { font-size: 28px; }
   .footer-team { flex-direction: column; align-items: center; gap: 26px; }
@@ -114,6 +154,7 @@ td.num, th.num { text-align: right; }
 }
 @media (max-width: 420px) {
   .metrics-grid-4, .metrics-grid-3 { grid-template-columns: 1fr 1fr; } .metric-value { font-size: 18px; }
+  .path-grid { grid-template-columns: 1fr; }
   .section { padding: 22px 12px; }
 }
 @media print {
@@ -174,13 +215,81 @@ td.num, th.num { text-align: right; }
     <div class="hero-number-sub">A for-sale subdivision earns <strong>+$552,000 to +$3.5 million</strong>. Building the same site as apartments and selling loses <strong>$1.72 million</strong>. Same land, same construction cost &mdash; the difference is entirely the exit.</div>
   </div>
 
-  <div class="metrics-grid-4">
-    <div class="metric-card warn"><span class="metric-value">($1.72M)</span><span class="metric-label">A &mdash; Build Apartments &amp; Sell</span></div>
-    <div class="metric-card good"><span class="metric-value">+$2.09M</span><span class="metric-label">B &mdash; Subdivide &amp; Sell Homes*</span></div>
-    <div class="metric-card"><span class="metric-value">5.27%</span><span class="metric-label">C &mdash; Build Apartments &amp; Hold (yield on new cash)</span></div>
-    <div class="metric-card"><span class="metric-value">$1.38M</span><span class="metric-label">D &mdash; Sell the Land (net, tax-deferred)</span></div>
+  <div class="path-grid">
+    <div class="path-card pa">
+      <div class="ph">
+        <div class="ptag">Pathway A &middot; Build &amp; Sell</div>
+        <div class="pname">Build Apartments and Sell</div>
+        <div class="punits">10 doors, stabilized, sold to an investor</div>
+        <div class="pbig">($1.72M)</div>
+        <div class="pbig-label">Developer loss at a 5.50% exit</div>
+      </div>
+      <div class="pb-body"><ul>
+        <li>Rebuild 5 units like-for-like plus 5 detached ADUs under SB 1211, fully ministerial</li>
+        <li>Stabilizes at a 3.86% yield on total capital while buyers price at 5.00&ndash;5.50%</li>
+        <li>Loses money at every exit cap tested</li>
+      </ul></div>
+      <div class="pmetric"><span class="l">New capital</span><span class="v">$3,795,100</span></div>
+      <div class="pmetric"><span class="l">Return on capital</span><span class="v">&minus;33.3%</span></div>
+      <div class="pmetric"><span class="l">Time to result</span><span class="v">~24&ndash;30 months</span></div>
+      <div class="pverdict">Reject</div>
+    </div>
+    <div class="path-card pb">
+      <div class="ph">
+        <div class="ptag">Pathway B &middot; Subdivide &amp; Sell</div>
+        <div class="pname">Subdivide and Sell Homes</div>
+        <div class="punits">5 homes now, or 10 SB 1123 homes from 2030</div>
+        <div class="pbig">+$2.09M</div>
+        <div class="pbig-label">5-home profit at observed appreciation*</div>
+      </div>
+      <div class="pb-body"><ul>
+        <li>B1: five 2,100 SF homes on a conventional map, +8.2% at today&rsquo;s pricing</li>
+        <li>B2: ten 1,600 SF homes under SB 1123, +37.2% with no appreciation assumed</li>
+        <li>Retail pays ~1.6&times; per SF built versus a capitalized rental exit</li>
+      </ul></div>
+      <div class="pmetric"><span class="l">New capital</span><span class="v">$5.37M&ndash;$8.16M</span></div>
+      <div class="pmetric"><span class="l">Return on capital</span><span class="v">+8.2% to +37.2%</span></div>
+      <div class="pmetric"><span class="l">Time to result</span><span class="v">~24&ndash;36 mo (B2: 2030+)</span></div>
+      <div class="pverdict">Best Development Returns</div>
+    </div>
+    <div class="path-card pc">
+      <div class="ph">
+        <div class="ptag">Pathway C &middot; Build &amp; Hold</div>
+        <div class="pname">Build Apartments and Hold</div>
+        <div class="punits">10 doors retained as long-term income</div>
+        <div class="pbig">5.27%</div>
+        <div class="pbig-label">Yield on new cash (3.86% on total capital)</div>
+      </div>
+      <div class="pb-body"><ul>
+        <li>Same construction as A, but no sale, so no loss is realized</li>
+        <li>$200,070 stabilized NOI on a brand-new, RSO-exempt asset</li>
+        <li>Marginal return over simply selling is 3.09%, below borrowing cost</li>
+      </ul></div>
+      <div class="pmetric"><span class="l">New capital</span><span class="v">$3,795,100</span></div>
+      <div class="pmetric"><span class="l">Unrealized position</span><span class="v">($1,540,339)</span></div>
+      <div class="pmetric"><span class="l">Time to income</span><span class="v">~24&ndash;30 months</span></div>
+      <div class="pverdict">Defensible, Not Optimal</div>
+    </div>
+    <div class="path-card pd">
+      <div class="ph">
+        <div class="ptag">Pathway D &middot; Sell the Land</div>
+        <div class="pname">Sell the Land As-Is</div>
+        <div class="punits">1031 exchange into stabilized income</div>
+        <div class="pbig">$1.38M</div>
+        <div class="pbig-label">Net proceeds, tax-deferred</div>
+      </div>
+      <div class="pb-body"><ul>
+        <li>No new capital, no construction, no entitlement risk</li>
+        <li>Capital gain deferred; RTC 69 base-year transfer open through January 2030</li>
+        <li>Subdivision optionality is priced into the $1,495,000 list and paid for by the buyer</li>
+      </ul></div>
+      <div class="pmetric"><span class="l">New capital</span><span class="v">$0</span></div>
+      <div class="pmetric"><span class="l">Replacement NOI at 6.00%</span><span class="v">$82,972 / yr</span></div>
+      <div class="pmetric"><span class="l">Time to result</span><span class="v">~45&ndash;180 days</span></div>
+      <div class="pverdict">Recommended</div>
+    </div>
   </div>
-  <p style="font-size:11px;color:#888;margin-top:-14px;">*5-lot subdivision with 2,100 SF homes delivered in roughly two years at the price appreciation Warmington has actually realized on E Palm Street. Range across both sub-cases is +$552,000 to +$3,548,000; see Scenario B.</p>
+  <p style="font-size:11px;color:#888;margin-top:8px;">*5-lot subdivision with 2,100 SF homes delivered in roughly two years at the price appreciation Warmington has actually realized on E Palm Street. Range across both sub-cases is +$552,000 to +$3,548,000; see Scenario B.</p>
 
   <p class="narrative">The reason is structural rather than a matter of assumptions. <strong>A completed Altadena home sells for roughly $620&ndash;$650 per square foot of building. A stabilized apartment at a 5.50% cap is worth about $399 per square foot of building.</strong> Construction cost per square foot is essentially the same either way. Retail pays about 1.6&times; per square foot built &mdash; and that single fact determines which strategy works on this site and which does not.</p>
   <p class="narrative">Scenario D &mdash; selling the land as-is &mdash; is not a development return and should not be read as one. It is the baseline: $1,382,875 realized with no capital at risk, no construction, and the capital gain deferred through a 1031 exchange. Every other path must justify the capital and risk it adds on top of that.</p>
@@ -191,6 +300,7 @@ td.num, th.num { text-align: right; }
   <div class="section-title">Scenario A &mdash; Build Apartments and Sell</div>
   <div class="section-subtitle">10 Doors, Stabilized, Sold to an Investor</div>
   <div class="section-divider"></div>
+  <div class="scen-banner ba"><div><div class="sb-tag">Scenario A &middot; Build &amp; Sell</div><div class="sb-name">Build Apartments and Sell</div></div><div class="sb-stat"><div class="sb-stat-value">($1,722,221)</div><div class="sb-stat-label">Loss at 5.50% exit</div></div></div>
   <p class="narrative">Rebuild the five pre-fire units like-for-like under the County fire-rebuild program, add five detached ADUs under SB&nbsp;1211, lease up, and sell the stabilized 10-door asset. Fully ministerial &mdash; no map, no hearing, no waiting period &mdash; and every door is exempt from the County Rent Stabilization Ordinance as new construction.</p>
   <div class="two-col">
     <div>
@@ -240,6 +350,7 @@ td.num, th.num { text-align: right; }
   <div class="section-title">Scenario B &mdash; Subdivide and Sell Individually</div>
   <div class="section-subtitle">Finished Lots, or Finished Homes, Sold One at a Time</div>
   <div class="section-divider"></div>
+  <div class="scen-banner bb"><div><div class="sb-tag">Scenario B &middot; Subdivide &amp; Sell</div><div class="sb-name">Subdivide and Sell Individually</div></div><div class="sb-stat"><div class="sb-stat-value">+8.2% to +37.2%</div><div class="sb-stat-label">Return on capital</div></div></div>
   <p class="narrative">Subdivide the 45,000 SF parcel, build homes on the resulting lots, and sell them individually. Two variants are modeled: a conventional five-lot map that can be started today, and the SB&nbsp;1123 ten-lot program, available from approximately January 2030.</p>
 
 
@@ -295,6 +406,7 @@ td.num, th.num { text-align: right; }
   <div class="section-title">Scenario C &mdash; Build Apartments and Hold</div>
   <div class="section-subtitle">10 Doors, Retained as Long-Term Income</div>
   <div class="section-divider"></div>
+  <div class="scen-banner bc"><div><div class="sb-tag">Scenario C &middot; Build &amp; Hold</div><div class="sb-name">Build Apartments and Hold</div></div><div class="sb-stat"><div class="sb-stat-value">5.27%</div><div class="sb-stat-label">Yield on new cash</div></div></div>
   <p class="narrative">Identical construction to Scenario A, but the asset is retained rather than sold. This changes the question entirely: there is no sale, so no loss is realized, and the relevant test becomes the <em>yield</em> the completed asset produces on the capital committed to it.</p>
   <div class="two-col">
     <div>
@@ -333,6 +445,7 @@ td.num, th.num { text-align: right; }
   <div class="section-title">Scenario D &mdash; Sell the Land</div>
   <div class="section-subtitle">Dispose As-Is and Redeploy Through a 1031 Exchange</div>
   <div class="section-divider"></div>
+  <div class="scen-banner bd"><div><div class="sb-tag">Scenario D &middot; Sell the Land</div><div class="sb-name">Sell the Land</div></div><div class="sb-stat"><div class="sb-stat-value">$1,382,875</div><div class="sb-stat-label">Net proceeds to exchange</div></div></div>
   <div class="two-col">
     <div>
       <table class="info-table">
